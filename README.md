@@ -13,11 +13,12 @@ Clicking "Unattend" button will remove your attendance.
 
 ### Development Notes
 Marketplace is using Airtable Marketplace table with a NOTOUCHY view as the database. 
-The application is running on AWS ECS. Amazon resources are created with terraform ...
-In order to clone this application 
+The application is running on AWS ECS. Amazon resources are created with terraform.
+
 Env variables for airtable and Amazon AWS are stored in CircleCI. CircleCI automatically updates the application on AWS upon every push to master branch.
 To clone the application to a different AWS account:
 
+  - Set Env variables in CircleCI 
   - Terraform init and apply terraform code to build S3 bucket resource
   - Add a dynamodb resource in tf file, init and apply
   - Run terraform code that refers to dynamodb in S3 backend 
